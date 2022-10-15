@@ -23,6 +23,7 @@
     "mongodb": "^4.10.0"
   },
   "devDependencies": {
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "standard": "^17.0.0"
   }
 }
