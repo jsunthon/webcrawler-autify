@@ -16,10 +16,10 @@ class WebPageDbClient {
     console.log('Successfully connected to DB!')
 
     this.db = this.client.db(DB_NAME)
-    this.collection = this.db.collection(COLLECTION_NAME);
+    this.collection = this.db.collection(COLLECTION_NAME)
   }
 
-  async save(items) {
+  async save (items) {
     return await this.collection.insertMany(items)
   }
 }
