@@ -14,6 +14,7 @@ async function downloadHtml (url) {
     const resp = await axios(url)
     if (resp.status !== HTTP_OK) {
       console.error(`Failed to download HTML for ${url}, HTTP status code ${resp.status}`)
+      return
     }
 
     const data = resp.data

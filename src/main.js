@@ -4,7 +4,7 @@ const { downloadHtml, parseHtmlData } = require('./modules/html')
 async function fetch (url, isMetaData) {
   const html = await downloadHtml(url)
 
-  if (isMetaData) {
+  if (isMetaData && html) {
     const htmlData = parseHtmlData(html)
     htmlData.site = url
     console.log(JSON.stringify(htmlData, null, 2))
