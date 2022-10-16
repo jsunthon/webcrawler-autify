@@ -7,7 +7,7 @@ const HTTP_OK = 200
 /**
  * Download html from the following URL and saves it as a file with name `{{url}}.html`
  * @param {*} url the url to download
- * @returns the html data
+ * @returns the HTML
  */
 async function downloadHtml (url) {
   try {
