@@ -1,23 +1,23 @@
 const { getArgData } = require('./modules/cmdArg')
 const { downloadHtml } = require('./modules/html')
+const { parseHtmlData } = require('./modules/metadata')
 
-async function fetchHtmls (urls) {
-  const htmls = []
+async function fetch (url, isMetaData) {
+  const html = await downloadHtml(url)
 
-  for (const url of urls) {
-    const html = await downloadHtml(url)
-    htmls.push(html)
+  if (isMetaData) {
+    const htmlData = parseHtmlData(html)
+    htmlData.site = url
+    console.log(JSON.stringify(htmlData, null, 2))
   }
-
-  return htmls
 }
 
-async function main () {
+async function startFetching () {
   const argData = getArgData()
   const urls = argData.urls
-  const htmls = await fetchHtmls(urls)
 
-  return htmls
+  const fetchPromises = urls.map(url => fetch(url, argData.isMetaData))
+  await Promise.all(fetchPromises)
 }
 
-main().then(() => console.log('Successfully downloaded HTMLs'))
+startFetching().then(() => console.log('Finished fetching HTML'))

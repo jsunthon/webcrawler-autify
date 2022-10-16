@@ -12,7 +12,7 @@ async function downloadHtml (url) {
   try {
     const resp = await axios(url)
     if (resp.status !== HTTP_OK) {
-      throw new Error(`Failed to download HTML for ${url}, HTTP status code ${resp.status}`)
+      console.error(`Failed to download HTML for ${url}, HTTP status code ${resp.status}`)
     }
 
     const data = resp.data
@@ -22,7 +22,7 @@ async function downloadHtml (url) {
 
     return data
   } catch (err) {
-    throw new Error(`Failed to download HTML for ${url}, err: ${err.message}`)
+    console.error(`Failed to download HTML for ${url}, err: ${err.message}`)
   }
 }
 
