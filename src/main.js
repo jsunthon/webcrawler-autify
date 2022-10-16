@@ -1,6 +1,5 @@
-const { getArgData } = require('./modules/cmdArg')
-const { downloadHtml } = require('./modules/html')
-const { parseHtmlData } = require('./modules/metadata')
+const { getArgData } = require('./modules/commandLine')
+const { downloadHtml, parseHtmlData } = require('./modules/html')
 
 async function fetch (url, isMetaData) {
   const html = await downloadHtml(url)
