@@ -13,6 +13,16 @@
       ],
       "program": "${workspaceFolder}/src/main.js",
       "args": ["https://www.google.com"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Main - Bad URL",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/src/main.js",
+      "args": ["https://www.gokokoogle.com"]
     }
   ]
 }

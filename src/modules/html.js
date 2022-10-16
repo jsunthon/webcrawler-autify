@@ -9,18 +9,21 @@ const HTTP_OK = 200
  * @returns the html data
  */
 async function downloadHtml (url) {
-  const resp = await axios(url)
-  if (resp.status !== HTTP_OK) {
-    throw new Error(`Failed to download HTML for ${url}, HTTP status code ${resp.status}`)
+  try {
+    const resp = await axios(url)
+    if (resp.status !== HTTP_OK) {
+      throw new Error(`Failed to download HTML for ${url}, HTTP status code ${resp.status}`)
+    }
+
+    const data = resp.data
+    const urlObj = new URL(url)
+    const fileName = `${urlObj.host}.html`
+    await fs.writeFile(fileName, data)
+
+    return data
+  } catch (err) {
+    throw new Error(`Failed to download HTML for ${url}, err: ${err.message}`)
   }
-
-  const data = resp.data
-
-  const urlObj = new URL(url)
-  const fileName = `${urlObj.host}.html`
-  await fs.writeFile(fileName, data)
-
-  return data
 }
 
 module.exports = {
