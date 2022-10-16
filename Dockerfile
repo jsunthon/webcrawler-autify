@@ -1,7 +1,5 @@
 FROM node:16-alpine
 
-RUN apk add --no-cache bash
-
 WORKDIR /usr/src
 
 COPY package*.json ./
