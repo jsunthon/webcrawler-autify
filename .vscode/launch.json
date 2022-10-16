@@ -37,12 +37,12 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Main - Bad URL",
+      "name": "Main - Bad URL (s)",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/src/main.js",
-      "args": ["https://www.gokokoogle.com"]
+      "args": ["https://www.gokokoogle.com", "http://badurlrwejr.com"]
     }
   ]
 }
