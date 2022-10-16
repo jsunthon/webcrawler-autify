@@ -27,6 +27,16 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Main - MetaData",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/src/main.js",
+      "args": ["--metadata", "https://www.google.com", "https://autify.com"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Main - Bad URL",
       "skipFiles": [
         "<node_internals>/**"
