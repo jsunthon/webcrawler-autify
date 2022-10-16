@@ -19,4 +19,4 @@ async function startFetching () {
   await Promise.all(fetchPromises)
 }
 
-startFetching().then(() => console.log('Finished fetching HTML'))
+startFetching().then(() => console.debug('Finished fetching HTML'))
