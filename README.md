@@ -1,5 +1,5 @@
 # webcrawler-autify
-CLI that fetche/downloads the HTML locally.
+CLI that fetches web pages and downloads the HTML locally.
 
 ## Build Image
 `docker build . -t fetch`
@@ -10,7 +10,7 @@ We can fetch multiple web pages at a time, just pass in the URLs like so. The pa
 
 ## Fetch Web Page with Metadata
 This will fetch the web pages and also output metadata in the console
-* `docker run -d fetch --metadata https://www.google.com https://autify.com`
+* `docker run fetch --metadata https://www.google.com https://autify.com`
 
 output:
 
