@@ -7,12 +7,22 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Main",
+      "name": "Main - Single Url",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/src/main.js",
       "args": ["https://www.google.com"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Main - Many Urls",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/src/main.js",
+      "args": ["https://www.google.com", "https://autify.com"]
     },
     {
       "type": "node",
