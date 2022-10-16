@@ -5,12 +5,12 @@ CLI that fetche/downloads the HTML locally.
 `docker build . -t fetch`
 
 ## Fetch Web Page
-We can fetch multiple web pages at a time, just pass in the URLs like so:
+We can fetch multiple web pages at a time, just pass in the URLs like so. The pages will be downloaded to the current directory in the container.
  * `docker run fetch https://www.google.com https://autify.com`
 
 ## Fetch Web Page with Metadata
 This will fetch the web pages and also output metadata in the console
-* `docker run fetch --metadata https://www.google.com https://autify.com`
+* `docker run -d fetch --metadata https://www.google.com https://autify.com`
 
 output:
 
