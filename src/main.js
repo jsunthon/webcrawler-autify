@@ -1,11 +1,11 @@
-const { getArgData } = require('./modules/CommandLineArg')
-const { fetchHtml } = require('./modules/PageFetch')
+const { getArgData } = require('./modules/cmdArg')
+const { downloadHtml } = require('./modules/html')
 
 async function fetchHtmls (urls) {
   const htmls = []
 
   for (const url of urls) {
-    const html = await fetchHtml(url)
+    const html = await downloadHtml(url)
     htmls.push(html)
   }
 
